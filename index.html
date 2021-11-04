@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="images/fea.ico" />
+		<link rel="stylesheet" href="dist/github-calendar-responsive.css" />
+
 	</head>
 	<body class="is-preload">
 
@@ -27,8 +29,9 @@
 					<ul>
 						<li><a href="#one">About me</a></li>
 						<li><a href="#two">Project Experience</a></li>
-						<li><a href="#three">Things I Can Share</a></li>
-						<li><a href="#four">Contact</a></li>
+						<li><a href="#three">Skills and Interests</a></li>
+						<li><a href="#four">My Github</a></li>
+						<li><a href="#five">Contact / CV</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -101,8 +104,7 @@
 						<!-- Three -->
 							<section id="three" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 6em;">
 								<div class="container">
-									<h3>Things I Can Share</h3>
-									<p>I studied Physics and Computer Science in my universitiy studies. Now, I aim to be an IT specialist in data science after graduating from my Master's Program. Therefore, there are still plenty of knowledge and skills I should learn and hone. Let's share the experience of learing these things.</p>
+									<h3>Skills and Interests</h3>
 									<h4> Skills </h4>
 									<ul class="feature-icons">
 										<li class="icon solid fa-code">Coding / Programming </li>
@@ -126,9 +128,19 @@
 							</section>
 
 						<!-- Four -->
-							<section id="four" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 6em;">
+							<section id="four" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 3em; padding-bottom: 3em;">
+								<div class="container" >
+									<h3>My Github</h3>
+									<div class="calendar">
+    								<!-- Loading stuff -->
+									</div>
+								</div>
+							</section>
+
+						<!-- Five -->
+							<section id="five" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 6em;">
 								<div class="container">
-									<h3>Contact</h3>
+									<h3>Contact / CV</h3>
 									<p>Feel free to connect with me and <a href="documents/Chih-Chieh_Lin_CV.pdf">view my resume</a>.</p>
 									<p class="icons">
 										<a href="mailto:linjaak@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a> <a href="mailto:linjaak@gmail.com">linjaak@gmail.com</a>
@@ -173,6 +185,21 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- library for embedding github  -->
+			<script src="dist/github-calendar.min.js"></script>
+			<script>
+    			GitHubCalendar(".calendar", "ChJL");
+
+    			// or enable responsive functionality:
+    			GitHubCalendar(".calendar", "ChJL", { responsive: true });
+
+    			// Use a proxy
+    			GitHubCalendar(".calendar", "ChJL", {
+       				proxy (username) {
+         				return fetch(`https://your-proxy.com/github?user=${username}`)
+       					}
+    			}).then(r => r.text())
+			</script>
 
 	</body>
 </html>
