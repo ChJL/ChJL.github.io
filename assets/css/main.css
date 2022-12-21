@@ -71,6 +71,79 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+/*For Switching Night & Light Mode 74 - 143*/
+.mode-switch {
+  display: absolute;
+  align-items: center;
+/*  background-color: #fff;*/
+  height: 10%;
+  margin-top: 1%;
+  padding-top: 1%;
+}
+
+.mode-switch label {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+.mode-switch input {
+  display: none;
+}
+
+.mode-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.mode-switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.mode-switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.mode-switch input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.mode-switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#mode-indicator {
+  left: 10%;
+  font-size: 14px;
+  background-color: #666;
+}
+
+body.light-mode #mode-indicator {
+  color: #2196f3;
+}
+
+body.night-mode #mode-indicator {
+  color: #666;
+}
+body.light-mode {
+  color: #2196f3;
+}
 
 /* Basic */
 
