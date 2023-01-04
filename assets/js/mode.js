@@ -3,22 +3,22 @@ const modeSwitch = document.getElementById('mode-switch');
 
 function switchToLightMode() {
   document.body.classList.remove('night-mode');
-  document.h3.classList.remove('night-mode');
-  document.h4.classList.remove('night-mode');
-  document.p.classList.remove('night-mode');
-  document.div.classList.remove('night-mode');
-  document.footer.classList.remove('night-mode');
-  document.section.classList.remove('night-mode');
-  document.a.classList.remove('night-mode');
+  document.getElementsByTagName("h3").classList.remove('night-mode');
+  document.getElementsByTagName("h4").classList.remove('night-mode');
+  document.getElementsByTagName("p").classList.remove('night-mode');
+  document.getElementsByTagName("div").classList.remove('night-mode');
+  document.getElementsByTagName("footer").classList.remove('night-mode');
+  document.getElementsByTagName("section").classList.remove('night-mode');
+  document.getElementsByTagName("a").classList.remove('night-mode');
 
   document.body.classList.add('light-mode');
-  document.h3.classList.add('light-mode');
-  document.h4.classList.add('light-mode');
-  document.p.classList.add('light-mode');
-  document.div.classList.add('light-mode');
-  document.footer.classList.add('light-mode');
-  document.section.classList.add('light-mode');
-  document.a.classList.add('light-mode');
+  document.getElementsByTagName("h3").classList.add('light-mode');
+  document.getElementsByTagName("h4").classList.add('light-mode');
+  document.getElementsByTagName("p").classList.add('light-mode');
+  document.getElementsByTagName("div").classList.add('light-mode');
+  document.getElementsByTagName("footer").classList.add('light-mode');
+  document.getElementsByTagName("section").classList.add('light-mode');
+  document.getElementsByTagName("a").classList.add('light-mode');
   
   // modeIndicator.innerHTML = 'Light Mode';
   modeSwitch.checked = false;
@@ -27,22 +27,22 @@ function switchToLightMode() {
 
 function switchToNightMode() {
   document.body.classList.remove('light-mode');
-  document.h3.classList.remove('light-mode');
-  document.h4.classList.remove('light-mode');
-  document.p.classList.remove('light-mode');
-  document.div.classList.remove('light-mode');
-  document.footer.classList.remove('light-mode');
-  document.section.classList.remove('light-mode');
-  document.a.classList.remove('light-mode');
+  document.getElementsByTagName("h3").classList.remove('light-mode');
+  document.getElementsByTagName("h4").classList.remove('light-mode');
+  document.getElementsByTagName("p").classList.remove('light-mode');
+  document.getElementsByTagName("div").classList.remove('light-mode');
+  document.getElementsByTagName("footer").classList.remove('light-mode');
+  document.getElementsByTagName("section").classList.remove('light-mode');
+  document.getElementsByTagName("a").classList.remove('light-mode');
 
   document.body.classList.add('night-mode');
-  document.h3.classList.add('night-mode');
-  document.h4.classList.add('night-mode');
-  document.p.classList.add('night-mode');
-  document.div.classList.add('night-mode');
-  document.footer.classList.add('night-mode');
-  document.section.classList.add('night-mode');
-  document.a.classList.add('night-mode');
+  document.getElementsByTagName("h3").classList.add('night-mode');
+  document.getElementsByTagName("h4").classList.add('night-mode');
+  document.getElementsByTagName("p").classList.add('night-mode');
+  document.getElementsByTagName("div").classList.add('night-mode');
+  document.getElementsByTagName("footer").classList.add('night-mode');
+  document.getElementsByTagName("section").classList.add('night-mode');
+  document.getElementsByTagName("a").classList.add('night-mode');
   // modeIndicator.innerHTML = 'Night Mode';
   modeSwitch.checked = true;
   localStorage.setItem('mode', 'night');
