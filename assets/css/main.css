@@ -138,16 +138,17 @@ body.light-mode #mode-indicator {
   color: #2196f3;
 }
 
-body.night-mode #mode-indicator {
-/*  color: #666;*/
+/*body.night-mode #mode-indicator {
+  color: #666;
 }
+*/
 
-
-body.night-mode {
+/*body.night-mode {
   color: #2196f3;
+  background-color: #000000;
 }
 
-/*div.night-mode {
+div.night-mode {
 	background-color: #000000;
 }*/
 
@@ -155,11 +156,12 @@ body.night-mode {
   color: #fff;
 }*/
 
-/*.night-mode div, .night-mode #header{
+.night-mode div, .night-mode #header{
 	color: #fff;
 	background-color: #000000;
 }
-*/
+
+
 .night-mode #switchdiv {
 	background-color: inherit;
 }
