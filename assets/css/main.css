@@ -147,14 +147,19 @@ body.night-mode {
   color: #2196f3;
 }
 
-.night-mode h3, .night-mode h4, .night-mode p {
+/*div.night-mode {
+	background-color: #000000;
+}*/
+
+/*.night-mode h3, .night-mode h4, .night-mode p {
   color: #fff;
-}
-.night-mode div, .night-mode #header{
+}*/
+
+/*.night-mode div, .night-mode #header{
 	color: #fff;
 	background-color: #000000;
 }
-
+*/
 .night-mode #switchdiv {
 	background-color: inherit;
 }
