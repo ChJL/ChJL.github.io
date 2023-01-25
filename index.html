@@ -12,9 +12,17 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" type="image/x-icon" href="images/fea.ico" />
 		<link rel="stylesheet" href="dist/github-calendar-responsive.css" />
+		<style>
+			body.en-lang .tw {
+				display: none 
+			}
+			body.tw-lang .en {
+				display: none 
+			}
+		</style>
 
 	</head>
-	<body class="is-preload">
+	<body class="is-preload en-lang">
 
 		<!-- Header -->
 			<section id="header">
@@ -23,15 +31,25 @@
 					<h1 id="logo"><a href="#">Chih-Chieh Lin <br />
 					 </a></h1>
 					<p><a href="https://chihchiehlin.com/PopUp-Cities-I-Went/" target="_blank">Keep Exploring</a></p>
-					<div class="mode-switch light-mode" id="switchdiv">
-  						<div id="mode-indicator"></div>
-  						<label class="switch">
-    						<input type="checkbox" id="mode-switch">
-    						<span class="slider round"></span>
-  						</label>
+					<div class="row" style="margin-left: 2.5em;">
+						<div class="mode-switch light-mode" id="switchdiv">
+							<div id="mode-indicator"></div>
+							<label class="switch">
+								<input type="checkbox" id="mode-switch">
+								<span class="slider round"></span>
+							</label>
+						</div>
+						<div class="mode-switch" id="switch-en">
+							<div id="lang-indicator"></div>
+							<label class="switch">
+							<input type="checkbox" id="lang-switch">
+							<span class="slider round"></span>
+							</label>
+						</div>
 					</div>
 				</header>
-				<nav id="nav">
+				
+				<nav id="nav" class="en">
 					<ul>
 						<li><a href="#one">About me</a></li>
 						<li><a href="#two">Project Experience</a></li>
@@ -40,6 +58,17 @@
 						<li><a href="#five">Contact / CV</a></li>
 					</ul>
 				</nav>
+
+				<nav id="nav" class="tw">
+					<ul>
+						<li><a href="#one">關於我</a></li>
+						<li><a href="#two">專案們</a></li>
+						<li><a href="#three">我會什麼</a></li>
+						<li><a href="#four">我的 Github</a></li>
+						<li><a href="#five">聯絡我</a></li>
+					</ul>
+				</nav>
+
 				<footer>
 					<ul class="icons">
 						<li><a href="https://medium.com/@linjaak" target ="_blank" class="icon brands fa-medium"><span class="label">Medium</span></a></li>
@@ -65,7 +94,7 @@
 						<!-- One -->
 							<section id="one">
 								
-								<div class="container">
+								<div class="container en">
 									<header class="major">
 										<h3>About me</h3>
 										<p>
@@ -73,11 +102,20 @@
 									</header>
 									<p></p>
 								</div>
+								<div class="container tw">
+									<header class="major">
+										<h3>關於我</h3>
+										<p>
+										 現在在荷蘭阿姆斯特丹 <a href="https://www.ing.nl/particulier/english/index.html" target ="_blank" style="font-weight: bold;">ING</a> 當社畜
+										 </br>路過可以一起喝杯咖啡XD</p>
+									</header>
+									<p></p>
+								</div>
 							</section>
 
 						<!-- Two -->
 							<section id="two" >
-								<div class="container">
+								<div class="container en">
 									<h3>Projects</h3>
 									<p></p>
 									<div class="features">
@@ -104,13 +142,43 @@
 										</article>
 									</div>
 								</div>
+
+								<div class="container tw">
+									<h3>專案們</h3>
+									<p></p>
+									<div class="features">
+										<article>
+											<a href="https://github.com/ChJL/Gsheet-Notify-Line" class="image"><img src="images/Gsheet_notify_line.png" alt="" /></a>
+											<div class="inner">
+												<h4>用Github Actions 連接Google Sheets 定期傳送LINE通知</h4>
+												<p>定期把存在Gsheet的數據處理並通知使用者，連接和計劃的工作流是使用 Github Actions 實現。</p>
+											</div>
+										</article>
+										<article>
+											<a href="https://github.com/ChJL/Information_Visualization" class="image"><img src="images/eu_map.png" alt="" /></a>
+											<div class="inner">
+												<h4>在歐洲退休後最適合居住的國家</h4>
+												<p>一個視覺化網頁，幫助用戶在歐洲 31 個國家中選擇最適合退休後生活的國家，基於 Flask 的 Web 服務結合 D3.js。 可以看一下<a href="https://youtu.be/zHhZQshANS8">Demo影片</a>。 
+													點開<a href="https://information-visualization-chjl.vercel.app/">這裡</a>玩一下。</p>
+											</div>
+										</article>
+										<article>
+											<a href="https://chihchiehlin.com/documents/Green_Lab_report.pdf" class="image"><img src="images/android.png" alt="" /></a>
+											<div class="inner">
+												<h4>量化安卓應用程序及其網絡應用程序的能源消耗</h4>
+												<p>一項利用 Android Runner 進行實證實驗，並使用 R 語言分析實驗資料的研究。</p>
+											</div>
+										</article>
+									</div>
+								</div>
+
 							<section>
 
 							
 
 						<!-- Three -->
 							<section id="three" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 6em;">
-								<div class="container">
+								<div class="container en">
 									<h3>Skills and Interests</h3>
 									<h4> Skills </h4>
 									<ul class="feature-icons">
@@ -132,12 +200,36 @@
 										
 									</ul>
 								</div>
+
+								<div class="container tw">
+									<h3>我會什麼</h3>
+									<h4> 有些東西翻譯不了 </h4>
+									<ul class="feature-icons">
+										<li class="icon brands fa-docker">Docker</li>
+										<li class="icon brands fa-python">Python / R</li>
+										<li class="icon solid fa-cloud">AWS / Airflow</li>
+										<li class="icon brands fa-codepen">C/C++</li>
+										<li class="icon solid fa-chart-line">Data Engineering / Machine Learning</li>
+										<li class="icon brands fa-github">Github Actions</li>
+									</ul>
+									<h4> 這些可以 </h4>
+									<ul class="feature-icons">
+										<li class="icon solid fa-skiing">滑雪(單＆雙) </li>
+										<li class="icon solid fa-mountain">爬山/徒步</li>
+										<li class="icon solid fa-volleyball-ball">排球</li>
+										<li class="icon solid fa-guitar">吉他</li>
+										<li class="icon solid fa-map-marker-alt">旅行</li>
+										<li class="icon solid fa-water">自由潛水</li>
+										
+									</ul>
+								</div>
 							</section>
 
 						<!-- Four -->
 							<section id="four" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 3em; padding-bottom: 3em;">
 								<div class="container" >
-									<h3>My Github</h3>
+									<h3 class="en">My Github</h3>
+									<h3 class="tw">我的 Github</h3>
 									<div class="calendar">
     								<!-- Loading stuff -->
 									</div>
@@ -146,7 +238,7 @@
 
 						<!-- Five -->
 							<section id="five" style="margin-top: 10px; border-top: solid 6px #f4f4f4; padding-top: 3em; padding-bottom: 3em;">
-								<div class="container">
+								<div class="container en">
 									<h3>Contact / CV</h3>
 									<p>Feel free contact me with <a href="mailto:linjaak@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a> <a href="mailto:linjaak@gmail.com"></a> and <a href="https://chjl.github.io/onlineCV/" target="_blank">view my resume</a>.
 									</p>
@@ -164,6 +256,12 @@
 											</div>
 										</div>
 									</form> -->
+								</div>
+
+								<div class="container tw">
+									<h3>聯絡我</h3>
+									<p>寄<a href="mailto:linjaak@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a>給我 <a href="mailto:linjaak@gmail.com"></a> 或 <a href="https://chjl.github.io/onlineCV/" target="_blank">來看看履歷</a>.
+									</p>
 								</div>
 							</section>
 
@@ -191,6 +289,7 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/mode.js"></script>
+			<script src="assets/js/lang-switch.js"></script>
 			<!-- library for embedding github  -->
 			<script src="dist/github-calendar.min.js"></script>
 			<script>
