@@ -134,9 +134,9 @@ input, select, textarea {
 /*  background-color: #666;*/
 }
 
-body.light-mode #mode-indicator {
+/* body.light-mode #mode-indicator {
   color: #2196f3;
-}
+} */
 
 /*body.night-mode #mode-indicator {
   color: #666;
