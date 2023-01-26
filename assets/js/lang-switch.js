@@ -18,6 +18,8 @@ function switchToTwMode() {
   langSwitch.checked = true;
   localStorage.setItem('lang', 'tw');
 }
+// default
+switchToEnMode();
 
 langSwitch.addEventListener('change', function() {
   if (langSwitch.checked) {
