@@ -10,7 +10,7 @@
 		$body = $('body'),
 		$header = $('#header'),
 		$titleBar = null,
-		$nav = $('#nav'),
+		$nav = $('nav'),
 		$wrapper = $('#wrapper');
 
 	// Breakpoints.

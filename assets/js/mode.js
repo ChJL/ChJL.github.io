@@ -18,7 +18,8 @@ function switchToNightMode() {
   modeSwitch.checked = true;
   localStorage.setItem('mode', 'night');
 }
-
+// default
+switchToLightMode();
 modeSwitch.addEventListener('change', function() {
   if (modeSwitch.checked) {
     switchToNightMode();
