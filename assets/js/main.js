@@ -156,4 +156,24 @@
 			}
 		});
 
+	// 在現有的 $(document).ready 函數中添加
+	$(document).ready(function() {
+		// 平滑滾動功能
+		$('.scroll-down').on('click', function(e) {
+			e.preventDefault();
+			var targetSection = $($(this).attr('href'));
+			
+			$('html, body').animate({
+				scrollTop: targetSection.offset().top
+			}, 800, 'easeOutQuad');
+		});
+	});
+
+	// 添加 easeOutQuad easing 函數
+	if (typeof jQuery.easing.easeOutQuad !== 'function') {
+		jQuery.easing.easeOutQuad = function(x) {
+			return 1 - (1 - x) * (1 - x);
+		};
+	}
+
 })(jQuery);

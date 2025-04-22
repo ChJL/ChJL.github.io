@@ -73,59 +73,86 @@ input, select, textarea {
 }
 /*For Switching Night & Light Mode 74 - 169*/
 .mode-switch {
-  display: absolute;
-  align-items: center;
-/*  background-color: #fff;*/
-  height: 10%;
-  margin-top: 1%;
-  padding-top: 1%;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+    width: 3.8em; /* 確保兩個開關寬度一致 */
 }
 
 .mode-switch label {
-  position: relative;
-  display: inline-block;
-  width: 3em;
-  height: 1.5em;
+    position: relative;
+    display: inline-block;
+    width: 3.8em;
+    height: 2em;
+    margin: 0;
 }
 
 .mode-switch input {
-  display: none;
+    display: none;
 }
 
 .mode-switch .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 1em;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .4s;
+    border-radius: 2em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .mode-switch .slider:before {
-  position: absolute;
-  content: "";
-  height: 1em;
-  width: 1em;
-  left: 0.31em;
-  bottom: 0.31em;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
+    position: absolute;
+    content: "\f185"; /* Font Awesome 太陽圖示 */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    height: 1.6em;
+    width: 1.6em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #ffd43b;
 }
 
 .mode-switch input:checked + .slider {
-  background-color: #2196f3;
-}
-
-.mode-switch input:focus + .slider {
-  box-shadow: 0 0 1em #2196f3;
+    background-color: #1a1a1a;
 }
 
 .mode-switch input:checked + .slider:before {
-  transform: translateX(1.5em);
+    transform: translateX(1.8em);
+    content: "\f186"; /* Font Awesome 月亮圖示 */
+    color: #4acaa8;
+}
+
+#switch-en .slider:before {
+    content: "EN";
+    font-family: 'Lato', sans-serif;
+    color: #4acaa8;
+    font-weight: bold;
+}
+
+#switch-en input:checked + .slider:before {
+    content: "中";
+    color: #4acaa8;
+}
+
+.mode-switch:hover .slider {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.night-mode .mode-switch .slider {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #mode-indicator {
@@ -216,7 +243,7 @@ div.night-mode {
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: solid 1px #e4e4e4;
 		color: inherit;
-		text-decoration: none;
+		text-decoration: underline;
 	}
 
 		a:hover {
@@ -2930,6 +2957,26 @@ div.night-mode {
 						border-top: 0;
 					}
 
+		/* 調整 nav 的上方間距 */
+		#header > nav {
+			margin-top: -0.7em; /* 從 -0.5em 改為 -0.7em，減少一些空間 */
+		}
+
+		/* 調整 header 底部間距 */
+		#header > header {
+			padding-bottom: 0.6em !important; /* 從 0.8em 減少到 0.6em */
+		}
+
+		/* 調整開關容器的間距 */
+		.switches-container {
+			margin-bottom: 0.4em; /* 從 0.5em 減少到 0.4em */
+		}
+
+		/* 保持導航項目的間距 */
+		#header > nav ul li a {
+			padding: 0.5em 0;
+		}
+
 /* Wrapper */
 
 	#wrapper {
@@ -3429,3 +3476,292 @@ div.night-mode {
 			}
 
 	}
+
+/* 切換按鈕容器樣式 */
+.switches-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 0.5em;  /* 從 0.8em 減少到 0.5em */
+    margin-top: 0.5em;  /* 從 1em 減少到 0.5em */
+    margin-bottom: 0.5em; /* 添加底部邊距控制 */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+/* 共用的切換按鈕樣式 */
+.mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    position: relative;
+    width: 3.8em;
+}
+
+/* 切換按鈕標籤樣式 */
+.mode-switch label {
+    position: relative;
+    display: inline-block;
+    width: 3.8em;
+    height: 2em;
+    margin: 0;
+}
+
+/* 隱藏原始checkbox但保持可訪問性 */
+.mode-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 滑動開關背景 */
+.mode-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .4s;
+    border-radius: 2em;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* 滑動開關圓點 */
+.mode-switch .slider:before {
+    position: absolute;
+    content: "\f185"; /* Font Awesome 太陽圖示 */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    height: 1.6em;
+    width: 1.6em;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1em;
+    color: #ffd43b;
+}
+
+/* 開關啟用狀態 */
+.mode-switch input:checked + .slider {
+    background-color: #1a1a1a;
+}
+
+.mode-switch input:checked + .slider:before {
+    transform: translateX(1.8em);
+    content: "\f186"; /* Font Awesome 月亮圖示 */
+    color: #4acaa8;
+}
+
+/* 語言切換特定樣式 */
+#switch-en .slider:before {
+    content: "EN";
+    font-family: 'Lato', sans-serif;
+    color: #4acaa8;
+    font-weight: bold;
+}
+
+#switch-en input:checked + .slider:before {
+    content: "中";
+    color: #4acaa8;
+}
+
+/* 懸停效果 */
+.mode-switch:hover .slider {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 夜間模式特定樣式 */
+.night-mode .mode-switch .slider {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 確保開關可點擊 */
+.mode-switch label {
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* 調整 header 內的間距 */
+#header > header {
+    padding-bottom: 1em !important; /* 減少底部padding */
+}
+
+/* 調整導航選單的間距 */
+#header > nav ul li {
+    padding: 0;
+}
+
+#header > nav ul li a {
+    padding: 0.5em 0; /* 從 0.85em 減少到 0.5em */
+}
+
+/* 調整第一個導航項目的上邊距 */
+#header > nav ul li:first-child {
+    margin-top: 0.5em; /* 添加一個小的上邊距 */
+}
+
+/* Keep Exploring 連結的持續動畫效果 */
+#header p a {
+    position: relative;
+    text-decoration: none;
+}
+
+#header p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    animation: underlineAnimation 2s ease-in-out infinite;
+}
+
+@keyframes underlineAnimation {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* 確保 emoji 和文字之間有適當的間距 */
+#header p a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+/* Keep Exploring 連結樣式 - 較慢的動畫效果 */
+#header p a,
+#header p a:hover,
+#header p a:visited,
+#header p a:active,
+#header p a:focus {
+    position: relative;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    color: inherit;
+}
+
+#header p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    animation: underlineAnimation 4s ease-in-out infinite; /* 將動畫時間從 2秒 改為 4秒 */
+}
+
+@keyframes underlineAnimation {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+}
+
+/* 確保 emoji 和文字之間有適當的間距 */
+#header p a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+/* 下拉按鍵樣式 */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 100;
+    /* text-decoration: none !important;  強制移除底線 */
+    /* border-bottom: none !important;    強制移除底部邊框 */
+}
+
+.scroll-down i {
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: float 2s ease-in-out infinite;
+}
+
+/* 懸停效果 */
+.scroll-down:hover {
+    text-decoration: none !important;
+}
+
+.scroll-down:hover i {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* 浮動動畫 */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 確保圖片容器有正確的定位 */
+#zero .image.main {
+    position: relative;
+    overflow: hidden;
+}
+
+/* 確保整個頁面支持平滑滾動 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 移除一般超連結底線 */
+a:not(.resume-link) {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* 保留 View my resume 的底線 */
+.resume-link {
+    text-decoration: none;
+    /* border-bottom: 1px dotted; */
+}
+
+.resume-link:hover {
+    text-decoration: underline;
+    /* border-bottom: 1px solid; */
+}
