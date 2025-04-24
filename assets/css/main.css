@@ -3703,35 +3703,29 @@ div.night-mode {
     transform: translateX(-50%);
     text-align: center;
     z-index: 100;
-    /* text-decoration: none !important;  強制移除底線 */
-    /* border-bottom: none !important;    強制移除底部邊框 */
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .scroll-down i {
-    font-size: 2.5em;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-size: 2em;  /* 稍微縮小尺寸 */
+    color: rgba(255, 255, 255, 0.8);  /* 減少不透明度 */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);  /* 更輕微的陰影 */
     animation: float 2s ease-in-out infinite;
-}
-
-/* 懸停效果 */
-.scroll-down:hover {
-    text-decoration: none !important;
 }
 
 .scroll-down:hover i {
     color: #ffffff;
-    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    transform: scale(1.1);
+    transform: scale(1.05);  /* 縮小懸停時的放大效果 */
 }
 
-/* 浮動動畫 */
+/* 保持原有動畫 */
 @keyframes float {
     0% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-7px);  /* 減少浮動高度 */
     }
     100% {
         transform: translateY(0);
@@ -3764,4 +3758,30 @@ a:not(.resume-link) {
 .resume-link:hover {
     text-decoration: underline;
     /* border-bottom: 1px solid; */
+}
+/* 恢復原始下拉按鍵動畫 */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* 下拉按鍵樣式 */
+.scroll-down i {
+    font-size: 2.5em;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    animation: float 2s ease-in-out infinite;
+}
+
+.scroll-down:hover i {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
 }
